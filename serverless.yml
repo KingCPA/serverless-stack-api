@@ -8,6 +8,9 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
+  custom:
+    bundle:
+     linting: false
 
 provider:
   name: aws
@@ -19,10 +22,6 @@ provider:
   # under process.env.
   environment:
     tableName: notes
-
-    custom:
-    bundle:
-     linting: false
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
   # In this case Lambda functions are granted with permissions to access DynamoDB.
