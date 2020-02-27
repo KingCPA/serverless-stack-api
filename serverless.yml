@@ -17,8 +17,12 @@ provider:
 
   # These environment variables are made available to our functions
   # under process.env.
-  environment:
+  environment: {env:MY_ENV_VAR}
     tableName: notes
+
+    custom:
+  bundle:
+    linting: false
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
   # In this case Lambda functions are granted with permissions to access DynamoDB.
